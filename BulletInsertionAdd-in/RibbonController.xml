@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab id="tab_bullet_ins" label="Bullet Insertion">
+        <group id="grp_bullets" label="Bullets">
+			<button
+				id="btn_bullet_triangle"
+				label="Triangle"
+				onAction="BtnBulletTriangle_OnAction"
+				getImage="ImageTriangle_Icon_GetImage"
+				size="large"
+				getEnabled="BulletInsertion_GetEnabled"/>
+			<button
+				id="btn_bullet_circle"
+				label="Circle"
+				onAction="BtnBulletCircle_OnAction"
+				getImage="ImageCircle_Icon_GetImage"
+				size="large"
+				getEnabled="BulletInsertion_GetEnabled"/>
+			<button
+				id="btn_bullet_dash"
+				label="Dash"
+				onAction="BtnBulletDash_OnAction"
+				getImage="ImageDash_Icon_GetImage"
+				size="large"
+				getEnabled="BulletInsertion_GetEnabled"/>
+		</group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
