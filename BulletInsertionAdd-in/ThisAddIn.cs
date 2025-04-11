@@ -82,25 +82,25 @@ namespace BulletInsertionAdd_in
             paragraphFormat.Bullet.Font.Italic = MsoTriState.msoFalse;
 
             var fontSize = textRange.Font.Size;
-            paragraphFormat.Bullet.Font.Size = fontSize;
-
             switch (bulletType)
             {
                 case "Triangle":
                     textRange.IndentLevel = 2;
                     paragraphFormat.Bullet.Font.Name = "Wingdings 3";
                     paragraphFormat.Bullet.Character = 132;
+                    paragraphFormat.Bullet.Font.Size = fontSize * 0.7f;
                     break;
                 case "Circle":
                     textRange.IndentLevel = 3;
-                    paragraphFormat.Bullet.Character = 8226;                    
+                    paragraphFormat.Bullet.Character = 8226;
+                    paragraphFormat.Bullet.Font.Size = fontSize;
                     break;
                 case "Dash":
                     textRange.IndentLevel = 4;
                     paragraphFormat.Bullet.Character = 8211;
+                    paragraphFormat.Bullet.Font.Size = fontSize;
                     break;
             }
-
             textRange.Font.Size = fontSize;
         }
 
