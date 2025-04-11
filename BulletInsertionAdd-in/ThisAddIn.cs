@@ -81,30 +81,27 @@ namespace BulletInsertionAdd_in
             paragraphFormat.Bullet.Font.Bold = MsoTriState.msoFalse;
             paragraphFormat.Bullet.Font.Italic = MsoTriState.msoFalse;
 
-            textRange.Font.Name = "Trebuchet MS";
-            textRange.Font.Size = 8.5f;
-            textRange.Font.Bold = MsoTriState.msoFalse;
-            textRange.Font.Italic = MsoTriState.msoFalse;
-            textRange.Font.Color.RGB = 0;
+            var fontSize = textRange.Font.Size;
+            paragraphFormat.Bullet.Font.Size = fontSize;
 
             switch (bulletType)
             {
                 case "Triangle":
                     textRange.IndentLevel = 2;
-                    paragraphFormat.Bullet.Character = 9654;
-                    paragraphFormat.Bullet.Font.Size = 5.95f;
+                    paragraphFormat.Bullet.Font.Name = "Wingdings 3";
+                    paragraphFormat.Bullet.Character = 132;
                     break;
                 case "Circle":
                     textRange.IndentLevel = 3;
-                    paragraphFormat.Bullet.Character = 8226;
-                    paragraphFormat.Bullet.Font.Size = 8.5f;
+                    paragraphFormat.Bullet.Character = 8226;                    
                     break;
                 case "Dash":
                     textRange.IndentLevel = 4;
                     paragraphFormat.Bullet.Character = 8211;
-                    paragraphFormat.Bullet.Font.Size = 8.5f;
                     break;
             }
+
+            textRange.Font.Size = fontSize;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
